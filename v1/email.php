@@ -27,10 +27,10 @@ switch($request_method){
     
             if ($enviaremail) {
                 $response['mensagem'] = 'E-MAIL ENVIADO COM SUCESSO!';
+                App_Response::converterJson($response);
             } else {
                 App_Response::getResponse(500); 
             }
-            App_Response::converterJson($response);
             break;   
         }
         
