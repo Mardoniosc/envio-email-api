@@ -28,14 +28,13 @@ switch($request_method){
             if ($enviaremail) {
                 $response['mensagem'] = 'E-MAIL ENVIADO COM SUCESSO!';
             } else {
-                $response['mensagem'] = 'ERRO AO ENVIAR O E-MAIL!';
+                App_Response::getResponse(500); 
             }
             App_Response::converterJson($response);
             break;   
         }
-
-        $response['mensagem'] = 'ERRO AO ENVIAR O E-MAIL!T';
-        App_Response::converterJson($response);
+        
+        App_Response::getResponse(402); 
         break;  
 
 
